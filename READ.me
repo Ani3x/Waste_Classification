@@ -1,0 +1,17 @@
+*Opis
+Projekt ma na celu rozpoznawanie ze zdjęcia typu odpadu. Jest 6 klas: "cardboard", "glass", "metal", "paper", "plastic", "trash".
+
+*Podejście
+Z racji na zakaz używania w pełni gotowych rozwiązań użyłem podejścia ekstrakcji cech z obrazu, takich jak kolor, intensywność kolorów,
+kształt, wypełnienie obrazu itd. Na wejściu do sieci mamy więc tylko te cechy, nie wrzucamy tam obrazów ani ich cząstkowych pixeli, co 
+sprawia że proces uczenia jest ekspresowy. Reszta to już eksperymentacja, jakie cechy chcemy wyciągnąć albo jaki "kształ" 
+ma mieć sieć neuronowa.
+
+
+
+Przydatne linki:
+Image tresholding - https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html
+Contours - https://docs.opencv.org/4.x/d4/d73/tutorial_py_contours_begin.html
+Cross Entropy - https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
+Torch.nn = https://docs.pytorch.org/docs/main/nn.html
+Local local_binary_pattern = https://scikit-image.org/docs/stable/api/skimage.feature.html#skimage.feature.local_binary_pattern
