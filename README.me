@@ -1,15 +1,25 @@
-*Opis
+##Opis
 Projekt ma na celu rozpoznawanie ze zdjęcia typu odpadu. Jest 6 klas: "cardboard", "glass", "metal", "paper", "plastic", "trash".
 
-*Podejście
-Z racji na zakaz używania w pełni gotowych rozwiązań użyłem podejścia ekstrakcji cech z obrazu, takich jak kolor, intensywność kolorów,
-kształt, wypełnienie obrazu itd. Na wejściu do sieci mamy więc tylko te cechy, nie wrzucamy tam obrazów ani ich cząstkowych pixeli, co 
-sprawia że proces uczenia jest ekspresowy. Reszta to już eksperymentacja, jakie cechy chcemy wyciągnąć albo jaki "kształ" 
-ma mieć sieć neuronowa.
+##Podejście
+Z racji na zakaz używania w pełni gotowych rozwiązań użyłem podejścia ekstrakcji cech z obrazu, takich jak kolor, intensywność kolorów, kształt, wypełnienie obrazu itd. Na wejściu do sieci mamy więc tylko te cechy, nie wrzucamy tam obrazów ani ich cząstkowych pixeli, co sprawia że proces uczenia jest ekspresowy. Reszta to już eksperymentacja, jakie cechy chcemy wyciągnąć albo jaki "kształ" ma mieć sieć neuronowa. 
 
+##Uruchomienie
+Wszystkie biblioteki potrzebne do programów są w pliku requirements.txt. Pliki i ich funkcje:
+  - Item main.py - Plik, który służy do utworzenia modelu i jego wytrenowanie, to za jego pomocą tworzymy np. waste_model.pth
+  - Item model.py - Znajduje się tu architektura sieci
+  - Item przerabianko.py - Jest tu funkcja, która służy do ekstrakcji cech ze zdjęcia
+  - Item testowanie.py - Służy do testowanie modelu na zbiorze test - wyniki dla mojego modelu waste_model.pth
+      -Nested Item cardboard : 34/44 (77.27%)
+      -Nested Item glass     : 33/47 (70.21%)
+      -Nested Item metal     : 22/40 (55.00%)
+      -Nested Item paper     : 46/64 (71.88%)
+      -Nested Item plastic   : 26/44 (59.09%)
+      -Nested Item trash     : 9/14 (64.29%)
+  - Item waste_model.pth - plik z wagami modelu
+  - Item notatnik Jupyter ze wszystkim w sumie, komentarze w środku tłumaczą co i jak
 
-
-Przydatne linki:
+###Przydatne linki:
 Image tresholding - https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html
 Contours - https://docs.opencv.org/4.x/d4/d73/tutorial_py_contours_begin.html
 Cross Entropy - https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html
